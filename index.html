@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+     <link href="./css/css.css" rel="stylesheet">
+     <link href="./css/ani.css" rel="stylesheet">
+     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <style>
+        .inp_box1 .inp_meu .checked{
+            background:red;
+        }
+    </style>
+ 
+</head>
+<body>
+<div id="accordion" style="display: block;">
+                    <div class="progress" style="display: block;">
+                        <div><span id="current">1</span><span id="total">/3</span></div>
+                    </div>
+                    <div id="div1" class="inp_box1" data-num="1" style="display:block;">
+                        <h3>　　他是直男吗？</h3>
+
+                        <div class="inp_meu"><p name="inp_rada1" data-value="A" ><span>a. 是</span></p><p name="inp_radb1" data-value="B"><span>b.不是</span></p></div>
+                    </div>
+                     <div class="progress" style="display: block;">
+                        <div><span id="current">2</span><span id="total">/3</span></div>
+                    </div>
+                    <div id="div2" class="inp_box1" data-num="1" style="display:block;">
+                        <h3>　　他喜欢下列哪项运动？</h3>
+
+                        <div class="inp_meu"><p name="inp_rada1" data-value="A"><span>a.喜欢打篮球</span></p><p name="inp_radb1" data-value="B"><span>b.喜欢踢足球</span></p><p name="inp_radc1" data-value="C"><span>c. 喜欢打台球</span></p><p name="inp_radd1" data-value="D"><span>d.喜欢健身</span></p><p name="inp_radd1" data-value="e"><span>e.喜欢宅在家</span></p><p name="inp_radd1" data-value="f"><span>f.电竞运动员
+                    </div>
+                     <div class="progress" style="display: block;">
+                        <div><span id="current">3</span><span id="total">/3</span></div>
+                    </div>
+                    <div id="div3" class="inp_box1" data-num="1" style="display:block;">
+                        <h3>　　他喜欢穿什么风格的衣服？</h3>
+
+                        <div class="inp_meu"><p name="inp_rada1" data-value="A"><span>a. 运动风</span></p><p name="inp_radb1" data-value="B"><span>b. 休闲风</span></p><p name="inp_radc1" data-value="C"><span>c. 商务风</span></p><p name="inp_radd1" data-value="D"><span>d. 风格不明</span></p></div>
+                    </div>
+                  
+                   <div style="background:rgb(195,139,217);color:white;padding:11px 0;" class="inp_meu" id="submit">立即测试</div>
+
+ </div>
+ <script>
+ $('#div1 .inp_meu>p,#div2 .inp_meu>p,#div3 .inp_meu>p').click(function(){
+    $(this).addClass('checked').siblings().removeClass('checked');
+ });
+ //立即测试
+ $('#submit').click(function(){
+    var t1;
+    $('#div1>.inp_meu>p').each(function(){
+        if($(this).hasClass('checked')){
+             t1 = $(this).data('value');
+        }
+    }); 
+   var t2;
+    $('#div2>.inp_meu>p').each(function(){
+        if($(this).hasClass('checked')){
+             t2 = $(this).data('value');
+        }
+    }); 
+    var t3;
+    $('#div3>.inp_meu>p').each(function(){
+        if($(this).hasClass('checked')){
+             t3 = $(this).data('value');
+        }
+    }); 
+    var t = t1 + t2 + t3;
+    if(t=="AAA"){
+        alert('过不去的就放着，忘不了的就记着，就这样吧，总要接着生活。这话说给你听，也是在说给我。');
+    }else if(t="AAB"){
+        alert('相爱的人散场后，不可以做朋友，因为彼此伤害过，也不可以做敌人，因为彼此相爱过。');
+    }else if(t=="AAC"){
+        alert("你应该给自己设定一个期限，就算是在想要的东西，只要过了那个期限，你就应该对自己说我再也不稀罕。");
+    }else if(t=="AAD"){
+        alert("后来我想，纵使这一生你都怀念我，说谁也无法替代我，我也还是没有办法觉得开心，因为我想要的是在我喜欢你的时候你也喜欢我，其他的都没意义。不要怀念，不要说难忘记，要敞亮的说，后会无期。");
+    }else if(t=="ABA"){
+        alert("这辈子我已经很满足了，知道你的名字，听过你的声音，牵过你的手，吻过你的唇，感受过你的怀抱，拥有过你的温柔，至于以后，三里清风三里路，步步清风再无你。");
+    }else if(t=="ABB"){
+        alert("失去，仍是这个世界上大多数爱的结局，我曾经也得到过很多，你的一切触手可及，以为能够就此延续，但是去你以后，也差点失去了我自己。");
+    }else if(t=="ABC"){
+        alert("我深知感动不是爱情，我在自己身上亲眼看见了，一个人对不喜欢的人能有多残忍。");
+     }else if(t=="ABD"){
+        alert("也许，很久以后你才会懂，像我这般倔强的人，是要鼓足多大的勇气才会求你别丢下我，又是憋着多大一股劲儿才会彻底把你赶出我的生活。");
+     }else if(t=="ACA"){
+        alert("你的死缠烂打，其实不是真的爱我，那只是你在跟自己赛跑，我始终深信，爱就是把最好的一切给予对方，包括尊严。");
+     }else if(t=="ACB"){
+        alert("往事就不提了，夜还很长，余生也是，需要留点力气重新等待，等等后来的人。");
+     }else if(t=="ACC"){
+        alert("不是越成熟就越难爱上一个人，只是越成熟就越能看清那不是爱。");
+     }else if(t=="ACD"){
+        alert("我曾对你心动过，但赶路要紧，我忘了说。");
+     }else if(t=="ADA"){
+        alert("你要做一个不动声色的大人了，不准情绪化，不准偷偷想念，不准回头看，去过自己另外的生活。你要听话，不是所有的鱼都会生活在同一片海里。");
+     }else if(t=="ADB"){
+        alert("已经路过的风景就不要再打听，失而复得的东西回不去最初模样，你看你的笑容早已不是为了我，我的眼里也已经没有你，我们都被忘了。");
+     }else if(t=="ADC"){
+        alert("以前啊，我以为即使我们那时错过了，以后也会再相遇然后幸福的一直走到底，后来啊，我们没有遇见，我也明白了，当年离你一步之遥的人，错过了就真的错过了。");
+     }else if(t=="ADD"){
+        alert("谁也承担不起另一个人的感情寄托，这件事我明白得太晚，灯光熄了，就得退场。");
+     }else if(t=="AEA"){
+        alert("林见青说，如果有一天，伊恩再也找不到凯莉了，那世界便再也没有色彩，你走以后，我的生活也只剩下黑与白。");
+     }else if(t=="AEB"){
+        alert("走吧，山高水长，可别再遇见像我这么喜欢你的人了。");
+     }else if(t=="AEC"){
+        alert("人太贪心了，一开始只是想多看你一眼，渐渐变成交往努力分享克制占有欲，开始不满挑剔改变想完全同化，因为无法实现开始暴躁焦虑歇斯底里，我们不知不觉以爱之名进行道德和感情的绑架，却忘了，一开始我只想在人群中多看你一眼。");
+     }else if(t=="AED"){
+        alert("美好其实难能可贵，你不是非要拥有它，进一步或者退一步，都显得不那么弥足珍贵了。");
+     }else if(t=="BAA"){
+        alert("我说我会陪你去看这个世界上最美的风景，做最浪漫的事，过最平淡的生活，后来这些话都还没来得及说，连一句好好再见也没有说。");
+     }else if(t=="BAB"){
+        alert("曾经那个愿为你千千万万次捡风筝的人已经逝去，人生中错过了就不会再得到，也许我们会忏悔，会救赎，但似乎都已经晚了。每当放飞风筝的那一刻，我们应该问问自己是否真的珍惜过我们所拥有的一切。");
+     }else if(t=="BAC"){
+        alert("总有一天，我们会从对方的世界里慢慢变淡，今后的路，没有我，你要保重。");
+     }else if(t=="BAD"){
+        alert("最近我发现，我已经记不清你的样子，记不清你微笑的样子，我很开心，时间终是救了我。还喜欢你，可已经少了非要在一起的执着。");
+     }else if(t=="BBA"){
+        alert("爱上你时，吸进去那么多勇气，最后吐出来的却全是叹息。");
+      }else if(t=="BBB"){
+        alert("有些事情，你能想通，也能接受，但还是会难过，那，就当我没来过。");
+      }else if(t=="BBC"){
+        alert("此生就别温暖了，祝你余生圆满，我们后会无期，我知道我失去你了。");
+      }else if(t=="BBD"){
+        alert("无力挽回的话，要懂得放手，我想放弃的时候，求你别对我笑了。");
+      }else if(t=="BCA"){
+        alert("后来我发现，太浓烈的东西总是不长久，应了那句话，第一眼就心动的人没法做朋友。");
+      }else if(t=="BCB"){
+        alert("你是我患得患失的梦，你是我生而为人最怕失去的光明，也是我此生此世最想忘记的秘密。");
+      }else if(t==="BCC"){
+        alert("我对你一如既往的热忱，只是我不再确定里面有没有爱的成分。");
+      }else if(t=="BCD"){
+        alert("我常常想起你，没有想念那么粘，没有想见那么热，只是稀薄的想起。");
+      }else if(t=="BDA"){
+        alert("男生其实有时和女生一样，是很难捉摸的，说没事，就是有事，说没关系，就是有关系，说讨厌你，不理你，就是非常，非常，喜欢你。");
+      }else if(t=="BDB"){
+        alert("在成年人的世界里，有一个潜规则，不主动就是没有答案，没有回应就等于拒绝，这世界上没有一个人忙到一天不回复你的消息。不对的感情，越努力越失意。");
+      }else if(t=="BDC"){
+        alert("愿你遇到一个成熟的爱人，那个能让你不用再咬着牙逞强，憋着泪倔强的人。");
+      }else if(t="BDD"){
+        alert("其实每个人在感情里的第六感都很准，你爱不爱我，我第一眼就能分辨出来，只不过有的装傻，有的自欺欺人，有的委屈求全，有的决定和你一起演。");
+      }else if(t=="BEA"){
+        alert("别难过啦，总有一天，你爱的人会带你去看星星。");
+      }else if(t=="BEB"){
+        alert("如果你也舍不得放我走，那就让我留下来陪你。");
+      }else if(t=="BEC"){
+        alert("我就在繁星中的一颗上生活，我会站在其中的一颗星星上微笑，当你在夜间仰望天际时，就仿佛每一颗星星都在笑。");
+      }else if("BED"){
+        alert("其实真正的送别没有长亭古道，没有劝君更尽一杯酒，就是在一个和平时一样的清晨，有的人，留在昨天了。");
+      }
+});
+ </script>
+</body>
+</html>
